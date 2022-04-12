@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "coverage": "hardhat coverage",
-    "test": "NODE_ENV=test NODE_NO_WARNINGS=1 hardhat test --network hardhat"
+    "test": "NODE_ENV=test NODE_NO_WARNINGS=1 hardhat test --network hardhat",
+    "lint": "solhint --config .solhint.json contracts/**/*.sol"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
