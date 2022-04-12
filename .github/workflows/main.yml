@@ -1,0 +1,29 @@
+name: CI
+on: ["push", "pull_request"]
+
+env:
+  INFURA_KEY: ${{ secrets.INFURA_KEY }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Node
+        uses: actions/setup-node@master
+        with:
+          node-version: "17.4.0"
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Run Tests
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider 
+        run: npm run coverage
+
+      - name: Codecov
+        uses: codecov/codecov-action@master
+        with:
+          verbose: true
