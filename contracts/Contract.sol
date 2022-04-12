@@ -2,4 +2,6 @@
 
 pragma solidity 0.8.13;
 
-contract Contract {}
+import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
+
+contract Contract is Ownable {}

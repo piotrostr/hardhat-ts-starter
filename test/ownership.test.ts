@@ -15,7 +15,7 @@ describe("ownership", () => {
   });
 
   beforeEach(async () => {
-    const Artifact = await ethers.getContractFactory("Okemonos");
+    const Artifact = await ethers.getContractFactory("Contract");
     contract = (await Artifact.deploy()) as any;
     await contract.deployed();
   });

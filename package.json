@@ -4,10 +4,9 @@
   "repository": "https://github.com/piotrostr/hardhat-ts-starter",
   "author": "piotrostr",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "coverage": "hardhat coverage",
-    "test": "NODE_OPTIONS=--openssl-legacy-provider hardhat test --network hardhat"
+    "test": "NODE_ENV=test NODE_NO_WARNINGS=1 hardhat test --network hardhat"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.5",
